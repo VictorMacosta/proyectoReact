@@ -1,36 +1,31 @@
 // import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-import losDatos from './datos.js'
-import navbar from './components/navbar'
+import Contar from './components/Contador/Contador';
+import Navbar from './components/NavBar/Navbar'
+import ListItem from './components/ListItems/ListItem'
+import DetalleProductoContenedor from './components/DetalleProductoContenedor/DetalleProductoContenedor'
 
-
-// losDatos()
-console.log(losDatos.todaLaInfo)
 console.log()
 function App (){
+  const [Input, setInput] = useState('')
   return(
-    navbar()
+    <>
+    <Navbar/>
+    
+    <main className='appMain'>
+      <Contar/>
+      <input value={Input} onChange={(e)=>{setInput(e.target.value)}}/>
+      <button>Buscar</button>
+      <div className='appDisplay'>
+          <ListItem  />
+          <DetalleProductoContenedor/>
+      </div>
+    </main>
+    </>
   )
 }
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         {/* <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a> */}
-//       </header>
-//     </div>
-//   );
-// }
+
+
 
 export default App;

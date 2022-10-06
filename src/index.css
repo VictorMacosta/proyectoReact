@@ -1,12 +1,10 @@
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
 }
 
 code {
@@ -14,50 +12,5 @@ code {
     monospace;
 }
 
-main{
-  width: 80%;
-  height: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #e0e0e0;
-  }
-.titulo{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: auto;
-  background-color: aquamarine;
-  margin-bottom: -10px;
-
-}
-.navegador{
-  width: 100%;
-  height: 30%;
-  display: flex;
-  justify-content: center;
-  background-color: gray;
-  margin-top: -15px;
-}
-.listPadre{
-  width: 30%;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-  list-style-type: none;
-}
 
 
-
-/* .tienda{
-  width: 60%;
-  height: 80%;
-  display: flex;
-  }
-
-  .inventario{
-    width: 20%;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-  } */
