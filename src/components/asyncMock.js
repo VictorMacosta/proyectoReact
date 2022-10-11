@@ -22,7 +22,7 @@ export const getProducts = () => {
 }
 export const getProduct =(id)=>{
     return new Promise ((resolve)=>{
-        resolve(products.find(prods => prods.id === id ))
+        resolve(products.find(product => product.id === id ))
     },1000)
 
 }

@@ -3,9 +3,8 @@ import { getProducts } from "../asyncMock"
 import { getProduct } from '../asyncMock'
 import { useState, useEffect } from "react"
 import Items from "../Items/Items"
+import { useParams } from 'react-router-dom'
 
-// const busquedaManual =()=>{
-// }
 
 const ListItem =(saludo)=>{
     const [products, setproducts] = useState([])
@@ -14,13 +13,10 @@ const ListItem =(saludo)=>{
     useEffect(()=>{
         getProducts()
             .then(res=>{
-                console.log(res)
+                // console.log(res)
                 setproducts(res)
             })
     },[])
-
-    // console.log(products)
-
 
     return(
         <div className="ListItemColum">
@@ -31,29 +27,36 @@ const ListItem =(saludo)=>{
 
 }
 
-// import DetalleProducto from '../DetalleProducto/DetalleProducto'
-
 
 export const DetalleProductoContenedor=()=>{
+    const param = useParams()
+    console.log(param)
+
     const [product, setproduct] = useState({})
+    const {loading, setloading} = useState (true)
+
+    
     useEffect(()=>{
         getProduct('2')
             .then(res=>{
-                console.log(res)
-                setproduct(res.id)
+                setproduct(res)
+            }).finally(()=>{
+                setloading(false)
             })
-    },[])
-    console.log(product)
+        },[])
+        console.log(product)
+        
+        if(loading){
+            return <h3>Cargando...</h3>
+        }
+
     return(
         <div>
-            {/* <DetalleProducto/> */}
+            <h1>Detalle de producto</h1>
+            {product.id}
         </div>
     )
 }
-
-// const ListDeItem = products.map(()=>{})
-
-
 
 
 

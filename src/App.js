@@ -15,10 +15,10 @@ function App (){
       <BrowserRouter>
       <main>
         <Navbar/>
-        <ListItem/>
         <Routes>
+          <Route path='/' element={<ListItem/>}/>
           <Route path='/Contador' element={<Contar/>}/>
-          <Route path='/Detalles' element={<DetalleProductoContenedor/>}/>
+          <Route path='/Detalles/: productId' element={<DetalleProductoContenedor/>}/>
         </Routes>
       </main>
       </BrowserRouter>

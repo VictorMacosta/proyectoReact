@@ -5,7 +5,6 @@ const Items =({products})=>{
     return(
         <ul className="ItemFlex">
             { products.map(products=>
-                <Link to ={`detalle/${products.id}`} >
                     <div key={products.id} className="card">
                         <h3>
                             {products.name }
@@ -15,8 +14,8 @@ const Items =({products})=>{
                         <h4>{products.price}</h4>
                         <h4>{products.stock}</h4>
                         </div>
+                        <Link to ={`Detalles/${products.id}`}>ver Detalle</Link>
                     </div>
-                </Link>
                 
             )}
         </ul>
